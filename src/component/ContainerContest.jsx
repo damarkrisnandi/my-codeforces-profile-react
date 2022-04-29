@@ -1,4 +1,4 @@
-import { Box, StatGroup, Stat, StatLabel, StatNumber, Badge, StatArrow, Text } from "@chakra-ui/react";
+import { Box, StatGroup, Stat, StatLabel, StatNumber, StatArrow, Text } from "@chakra-ui/react";
 const ContainerContest = (props) => {
     return (
         <div>

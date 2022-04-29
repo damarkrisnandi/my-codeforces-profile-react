@@ -1,6 +1,5 @@
 import React from "react";
 import CodeforcesLineChart from "../../component/CodeforcesLineChart";
-import { getRating } from "../../services";
 import { Box, Text } from "@chakra-ui/react";
 import { GlobalConsumer } from "../../context/context";
 class RatingChart extends React.Component {

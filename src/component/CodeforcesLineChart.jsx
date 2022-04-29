@@ -1,6 +1,5 @@
 import { Chart as ChartJS, registerables } from 'chart.js';
 import React from 'react';
-// import { Chart } from 'react-chartjs-2'
 import { Line } from "react-chartjs-2";
 ChartJS.register(...registerables);
 
@@ -41,13 +40,10 @@ class CodeforcesLineChart extends React.Component {
             }
         }
 
-        console.log(ratingUp, ratingDown);
-
         this.setState({rating: {up: ratingUp, down: ratingDown}});
     }
 
     componentDidUpdate(prevProps) {
-        console.log(prevProps);
         if (this.props.data.length !== prevProps.data.length || this.props.isChange) {
             this.setState({label: this.props.data.map(obj => obj.contestId)})
             this.setCategoryRate(this.props.data);

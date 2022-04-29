@@ -12,22 +12,12 @@ import {
 } from "@chakra-ui/react"
 import React from "react";
 import { GlobalConsumer } from "../../context/context";
-import { getUser, getRating } from "../../services";
-
 
 class MyProfile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            // handle: '',
-            // name: '',
-            // rank: '',
-            // avatar: '',
-            chipColor: '',
-            // chipText: '',
-            // rating: 0,
-            // ratingChange: 0,
-            // changeColor: 'green'
+            
         }
     }
     setColorRank = (rank) => {
@@ -49,12 +39,9 @@ class MyProfile extends React.Component {
                 break;
         }
         return color;
-        // this.chipColor = color;
-        // // this.chipText = text;
     }
 
     componentDidMount() {
-        console.log(this.props.state.handleInfo);
         if (this.props.state.listRating.length === 0 && this.props.state.handle === '') {
             this.props.dispatch({type: 'LOAD_RATING'})
             this.setColorRank(this.props.state.handleInfo.rank)

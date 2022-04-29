@@ -1,8 +1,5 @@
 import React, { Suspense } from "react";
-// import ListRating from "./pages/ListRating";
-import { Box, Grid, GridItem, Button, Center, Text } from "@chakra-ui/react";
-// import MyProfile from "./pages/MyProfile";
-// import RatingChart from "./pages/RatingChart";
+import { Box, Grid, GridItem, Center } from "@chakra-ui/react";
 import { MdPerson, MdTimeline, MdContentPaste } from 'react-icons/md';
 import { BrowserRouter as Router, Route, NavLink , Routes} from 'react-router-dom';
 

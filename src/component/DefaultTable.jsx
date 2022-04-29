@@ -20,20 +20,7 @@ export function DefaultTable(props) {
                                 /><hr />
                             </Box>
                             
-                            // <Tr key={data.date}>
-                            //     {
-                            //         props.column.map(col => {
-                            //             return (
-                                            
-                            //                     <Td key={col.field} >
-                            //                         {data[col.field]}
-                            //                     </Td>
-                                            
-                            //             )}
-                            //         )
-                            //     }
-
-                            // </Tr>
+                            
                         ))
                 }
         </div>
