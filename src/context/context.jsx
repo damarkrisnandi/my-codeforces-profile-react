@@ -17,8 +17,8 @@ const GlobalProvider = (Children) => {
             dispatch = (action) => {
                 switch (action.type) {
                     case 'LOAD_RATING':
-                        const respUser = getUser();
-                        const respRating = getRating();
+                        const respUser = getUser(this.state.handleInfo.handle);
+                        const respRating = getRating(this.state.handleInfo.handle);
                         Promise.all([respUser, respRating]).then(([respUser, respRating]) => {
                             this.setState({listRating: respRating.result, handle: respUser.handle, handleInfo: respUser.result[0], error: null});
                         }).catch((err) => {
@@ -30,7 +30,7 @@ const GlobalProvider = (Children) => {
                         })
                         break;
                     case 'UPDATE_STATE':
-                        this.setState({listRating: action.state.listRating, handle: action.state.handle, handleInfo: action.state.handleInfo});
+                        this.setState({listRating: action.state.listRating, handleInfo: action.state.handleInfo});
                         break;
                     default:
                         break;

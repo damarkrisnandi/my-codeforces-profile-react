@@ -1,5 +1,4 @@
 export const globalState = {
-    handle: '',
     listRating: [],
-    handleInfo: {}
+    handleInfo: {handle: 'malingayam'}
 }

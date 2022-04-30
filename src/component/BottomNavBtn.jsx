@@ -4,7 +4,7 @@ const BottomNavBtn = (props) => {
     return (
         <Button onClick={() => props.onClick()} variant='ghost'>
             <Box p={3} >
-                <Text fontSize={'3xl'} ><Center>{props.icon}</Center></Text>
+                <Center>{props.icon}</Center>
                 <Text align={'center'} fontSize={'xs'}>{props.label}</Text>
             </Box>
         </Button>

@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Box, Grid, GridItem, Center } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Center, Skeleton, SkeletonText } from "@chakra-ui/react";
 import { MdPerson, MdTimeline, MdContentPaste } from 'react-icons/md';
 import { BrowserRouter as Router, Route, NavLink , Routes} from 'react-router-dom';
 
@@ -15,9 +15,34 @@ class Main extends React.Component {
         selected: '/'
     }
 
-    LoaderMain = () => (
-        <div>Sedang memuat...</div>
-    )
+    LoaderMain = () => {
+        if (this.state.selected === '/' || this.state.selected === '/chart') {
+            return (
+                <div>
+                    <Box padding='6' boxShadow='lg' bg='white'>
+                        <Skeleton height={'xs'} />
+                        <SkeletonText mt='4' noOfLines={4} spacing='4' />
+                    </Box>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <Box padding='6' boxShadow='lg' marginBottom={4}>
+                        <SkeletonText mt='4' noOfLines={4} spacing='4' />
+                    </Box>
+
+                    <Box padding='6' boxShadow='lg' marginBottom={4}>
+                        <SkeletonText mt='4' noOfLines={4} spacing='4' />
+                    </Box>
+
+                    <Box padding='6' boxShadow='lg' marginBottom={4}>
+                        <SkeletonText mt='4' noOfLines={4} spacing='4' />
+                    </Box>
+                </div>
+            )
+        }
+    }
 
     componentDidMount() {
         this.setState({selected: window.location.pathname});

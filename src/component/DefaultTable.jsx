@@ -11,7 +11,7 @@ export function DefaultTable(props) {
                             </Center>
                         ) :
                         props.list.map((data) => (
-                            <Box marginBottom={3}>
+                            <Box marginBottom={3} key={data.contestId}>
                                 <ContainerContest 
                                 contestId={data.contestId}
                                 contest={data.contestName} 
