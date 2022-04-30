@@ -20,7 +20,22 @@ class ListRating extends React.Component {
         }
     }
     componentDidMount() {
-        this.props.dispatch({type: 'LOAD_RATING'});
+        if (this.props.state.listRating.length === 0) { 
+            this.props.dispatch({type: 'LOAD_RATING'})
+        } else {
+            const listRating = this.props.state.listRating;
+            this.props.dispatch({type: 'UPDATE_STATE', state: {
+                ...this.props.state,
+                listRating: []
+            }})
+            
+            setTimeout(() => {
+                this.props.dispatch({type: 'UPDATE_STATE', state: {
+                    ...this.props.state,
+                    listRating
+                }})
+            }, 500)
+        } 
     }
 
     render() {
