@@ -60,7 +60,7 @@ class MyProfile extends React.Component {
         const ratingChange = listRating.length > 0 ? listRating[listRating.length - 1].newRating - listRating[listRating.length - 1].oldRating : 0;
         
         return (
-            <Box p={2} overflowY={'scroll'}>
+            <Box p={2} overflowY={'scroll'} overflowX={'hidden'}>
                 {listRating.length > 0 || handleInfo.titleImage ? (
                     <Box p={6}>
                     
